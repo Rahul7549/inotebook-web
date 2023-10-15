@@ -1,0 +1,6 @@
+.note-container{
+    min-height: 50vh;
+    max-height: 70vh;
+    overflow: scroll;
+    overflow-x: hidden;
+}

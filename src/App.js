@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import Dashboard from './components/dashboard/Dashboard';
+import { Route, Routes } from 'react-router-dom';
+import NoteState from './context/note/NoteStates';
+import ManageNote from './components/manage-note/ManageNote';
+import Navbar from './components/navbar/Navbar'
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <NoteState>
+        <Navbar/>
+        <Routes>
+          <Route exact path='/' element={<Dashboard />} />
+          <Route exact path='/manage-note' element={<ManageNote />} />
+        </Routes>
+      </NoteState>
     </div>
-  );
+  )
 }
 
 export default App;
